@@ -59,7 +59,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
                         let content = UNMutableNotificationContent()
                         content.title = "Alert"
                         content.body = "You have changed \(altitude) meters based on barometer readings."
-                        content.sound = UNNotificationSound.default
+                        content.sound = UNNotificationSound.default()
                         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
                         let request = UNNotificationRequest(identifier: "Altitude Changed", content: content, trigger: trigger)
                         self.center.add(request, withCompletionHandler: { (error) in
@@ -115,7 +115,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
             let content = UNMutableNotificationContent()
             content.title = "Alert"
             content.body = "You have changed \(oldGPSAlt - gpsAltitude) meters based on GPS readings."
-            content.sound = UNNotificationSound.default
+            content.sound = UNNotificationSound.default()
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
             let request = UNNotificationRequest(identifier: "Altitude Changed", content: content, trigger: trigger)
             self.center.add(request, withCompletionHandler: { (error) in
